@@ -125,16 +125,21 @@ $res = mysqli_query($con, $sel);
         while ($row = mysqli_fetch_assoc($res)) {
         echo "
         <p>
-            <input type='checkbox' name='profissoes[]'
+            <input type='checkbox' name='checados[]'
             id='".$row['id']."' value='".$row['id']."'/>
             <label for='".$row['id']."'>".utf8_encode($row['profissao'])."</label>
         </p>";
 
         }
 
+        var_dump($_POST);
+
         if(isset($POST['submit'])){
-            foreach($_POST['profissoes'] as $profissao){
-                $upd = "UPDATE votos SET qtdvoto = qtdvoto + 1 WHERE id = ".$profissao."";
+
+        if(!empty($_POST['checados[]'])) {
+            foreach($_POST['checados[]'] as $caixas) {
+                $upd = "UPDATE votos SET qtdvoto = qtdvoto + 1 WHERE id = ".$caixas."";
+            }
         }
 
         if (mysqli_affected_rows($con)){
@@ -142,7 +147,6 @@ $res = mysqli_query($con, $sel);
         }else {
             echo "<script> alert('ERRO :c'); </script>";
         }
-
         }
 
         ?>
