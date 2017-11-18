@@ -161,7 +161,7 @@ $res = mysqli_query($con, $sel);
 </section>
 
 <footer class="footer">
-    <p> WEBSITE DESENVOLVIDOR POR GABRIEL
+    <p> WEBSITE DESENVOLVIDO POR GABRIEL
         PEDREIRA GOMES, PARA O TRABALHO DE CONCLUSÃO
         DE CURSO DA ESCOLA <strong>EMILIA DE PAIVA MEIRA</strong>.
    </p>
